@@ -1,5 +1,3 @@
-
-
 import numpy as np
 
 
@@ -10,17 +8,17 @@ class kalman_filter:
     # TODO Part 3: Initialize the covariances and the states    
     def __init__(self, P,Q,R, x, dt):
         
-        self.P=...
-        self.Q=...
-        self.R=...
-        self.x=...
-        self.dt = ...
+        self.P=np.array(P)
+        self.Q=np.array(Q)
+        self.R=np.array(R)
+        self.x= np.array(x)
+        self.dt = np.array(dt)
         
     # TODO Part 3: Replace the matrices with Jacobians where needed        
     def predict(self):
 
-        self.A = ...
-        self.C = ...
+        self.A = self.jacobian_A(A)
+        self.C = self.jacobian_H(C)
         
         self.motion_model()
         
@@ -95,4 +93,4 @@ class kalman_filter:
         
     # TODO Part 3: return the states here    
     def get_states(self):
-        return ...
+        return x, y, v
