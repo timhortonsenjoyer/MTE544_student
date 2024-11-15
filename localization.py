@@ -90,7 +90,7 @@ class localization(Node):
 
         # TODO Part 4: log your data
         print(stamp)
-        self.loc_logger.log_values([ax, ay, vdot, v*w, v, w, x, y, stamp.nanosec])
+        self.loc_logger.log_values([ax, ay, vdot, v*w, v, w, x, y, stamp.nsec])
       
     def odom_callback(self, pose_msg):
         
