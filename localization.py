@@ -48,10 +48,8 @@ class localization(Node):
         # TODO Part 3: Set up the quantities for the EKF (hint: you will need the functions for the states and measurements)
         
         x= np.zeros(6)
-        
-        Q= np.diag([0.5, 0.5, 0.5, 0.5, 0.5, 0.5])    
-
-        R= np.diag([0.5, 0.5, 0.5, 0.5])
+        Q= np.diag(np.full(6, 0.5))  
+        R= np.diag(np.full(4, 0.5))
         
         P= Q # initial covariance
         
@@ -72,8 +70,8 @@ class localization(Node):
         # and linear acceleration in x and y from the imu msg
         # the kalman filter should do a proper integration to provide x,y and filter ax,ay
         
-        v = odom_msg.twist.twist.linear.x
-        w = odom_msg.twist.twist.angular.z
+        v = odom_msg.twist.twist.linear
+        w = odom_msg.twist.twist.angular
         ax = imu_msg.linear_acceleration.x
         ay = imu_msg.linear_acceleration.y
         z= np.array([v, w, ax, ay])
@@ -91,7 +89,7 @@ class localization(Node):
         self.pose=np.array([x, y, th, stamp])
 
         # TODO Part 4: log your data
-        self.loc_logger.log_values(ax, ay, vdot, v*w, v, w, x, y, stamp.sec)
+        self.loc_logger.log_values(ax, ay, vdot, v*w, v, w, x, y, stamp)
       
     def odom_callback(self, pose_msg):
         
