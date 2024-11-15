@@ -48,7 +48,7 @@ class localization(Node):
         # TODO Part 3: Set up the quantities for the EKF (hint: you will need the functions for the states and measurements)
         
         x= np.zeros(6)
-        Q= np.diag(np.full(6, 0.8))  
+        Q= np.diag(np.full(6, 0.2))  
         R= np.diag(np.full(4, 0.5))
         
         P= Q # initial covariance
