@@ -30,8 +30,6 @@ class kalman_filter:
         S=np.dot(np.dot(self.C, self.P), self.C.T) + self.R
             
         kalman_gain=np.dot(np.dot(self.P, self.C.T), np.linalg.inv(S))
-        print(z)
-        print(self.measurement_model())
         surprise_error= z - self.measurement_model()
         
         self.x=self.x + np.dot(kalman_gain, surprise_error)
