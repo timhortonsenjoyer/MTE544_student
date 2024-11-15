@@ -89,6 +89,7 @@ class localization(Node):
         self.pose=np.array([x, y, th, stamp])
 
         # TODO Part 4: log your data
+        print(stamp)
         self.loc_logger.log_values([ax, ay, vdot, v*w, v, w, x, y, stamp.nanoseconds])
       
     def odom_callback(self, pose_msg):
