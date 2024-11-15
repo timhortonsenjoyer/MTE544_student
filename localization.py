@@ -78,7 +78,6 @@ class localization(Node):
         
         # Implement the two steps for estimation
         self.kf.predict()
-
         self.kf.update(z)
         
         # Get the estimate
@@ -89,7 +88,7 @@ class localization(Node):
         self.pose=np.array([x, y, th, stamp])
 
         # TODO Part 4: log your data
-        print(stamp)
+        print([ax, ay, vdot, v*w, v, w, x, y, stamp.nanosec])
         self.loc_logger.log_values([ax, ay, vdot, v*w, v, w, x, y, stamp.nanosec])
       
     def odom_callback(self, pose_msg):
