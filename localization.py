@@ -49,7 +49,7 @@ class localization(Node):
         
         x= np.zeros(6)
         Q= np.diag(np.full(6, 0.5))  
-        R= np.diag(np.full(4, 0.8))
+        R= np.diag(np.full(4, 0.2))
         
         P= Q # initial covariance
         
