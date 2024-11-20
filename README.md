@@ -17,7 +17,7 @@ You will learn how to:
 - Generate an optimal path using the A* algorithm;
 - Execute a path on a mobile robot.
 
-**NOTE** this Lab builds on top of Lab 2 and Lab 3. A complete solution to Lab 2 and Lab 3 is provided within this lab so that even if you did not conclude Lab 2 and Lab 3's implementation, you can still work on Lab 3 without penalties. You are welcome to replace some of the code with your own development from Lab 2 and Lab 3.
+**NOTE** this Lab builds on top of Lab 2 and Lab 3. A complete solution to Lab 2 and Lab 3 is provided within this lab so that even if you did not conclude Lab 2 and Lab 3's implementation, you can still work on Lab 4 without penalties. You are welcome to replace some of the code with your own development from Lab 2 and Lab 3.
 
 Check ```rubrics.md``` for the grading scheme of this lab.
 
@@ -74,13 +74,20 @@ Check the Excel sheet (will publish on Wed Nov. 27th) to see which entrance of t
 Undock the robot, put the robot in the entrance marked for you, and reset the odometry, and then acquire the map as you did in LAB-1 and save it as room for use in the planning.
 
 ```
-# terminal 1
+# terminal 1: reset the odometry pose
 ros2 service call /reset_pose irobot_create_msgs/srv/ResetPose {}
-# terminal 2
+# terminal 2: run the SLAM
 ros2 launch turtlebot4_navigation slam.launch.py
-# terminal 3
+# terminal 3: view the results in RViz
+ros2 launch turtlebot4_viz view_robot.launch.py
+# terminal 4: move around the robot
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+# terminal 5: save the map
 ros2 run nav2_map_server map_saver_cli -f room
 ``` 
+
+**Note: if you face "Failed to spin map subscription" error, just rerun the `ros2 run nav2_map_server map_saver_cli -f room`**.
+
 When the map is acquired, make sure you **don't pick up the robot** so you wouldn't alter the odometry. If by any change you did, put the robot back on the dock, then undock and reset the odometry. This is to avoid for you to map the enviornment again.
 
 **Show the map to a TA to score the marks associated to this part.**

@@ -1,3 +1,7 @@
+## Pre-lab
+-5 marks if the code is not submitted by 24 hours before the lab section.
+-3 marks if code submitted but mostly incomplete or completions are random/do not make sense.
+
 ## Part 1 and 2: No marks
 ## Part 3: 5 marks
 **In-Lab**
