@@ -65,7 +65,7 @@ ros2 action send_goal /dock irobot_create_msgs/action/Dock {}
 - Declare ros2 domain: export ROS_DOMAIN_ID=X (X being the number of your robot)
 
 ## Part 3 - Map aquisition (5 marks)
-Check the [List of groups](https://uofwaterloo-my.sharepoint.com/:x:/g/personal/y526hu_uwaterloo_ca/Ea4EkpcchnhMki8bDj3RWygBWgvsYDx4HV4QvirBCZQdzQ?e=vS0vna) Excel sheet to see which entrance of the maze you have been assigned to and the time slots reserved for your group. There is a robot at each entrance. Use the robot at the entrance assigned to your group.
+Check the Excel sheet (will publish on Wed Nov. 27th) to see which entrance of the maze you have been assigned to and the time slots reserved for your group. There is a robot at each entrance. Use the robot at the entrance assigned to your group.
 
 **Please try to finish within your allocated time.**
 
