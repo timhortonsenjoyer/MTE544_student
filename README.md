@@ -135,6 +135,7 @@ In a maximum of 3 pages (excluding the front page), report the performance of th
 * Figures illustrating the map, with the trajectories generated for the two goal points overlayed on the map. Make sure to clearly mark the starting and ending locations of the robot.
 * Compare the two different heuristics (Manhattan and Euclidean distances, they can be on the same plot, but use different colors). Discuss the results. Are they different, if yes, why, if not why. Which one is better, and why?
 
+**Note on Due Date: all reports, for all sections, are due Dec. 3rd 11:59PM**
 ## Submission
 
 Submit the report and the code on Dropbox (LEARN) in the corresponding folder. Only one submission per group is needed:
