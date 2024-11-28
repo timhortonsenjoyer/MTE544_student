@@ -38,7 +38,7 @@ class localization(Node):
         self.pose=None
         
         if type==rawSensors:
-            self.initRawSensors();
+            self.initRawSensors()
         elif type==kalmanFilter:
             self.initKalmanfilter()
             self.kalmanInitialized = False
@@ -73,9 +73,9 @@ class localization(Node):
             
             # TODO PART 5 Bonus put the Q and R matrices
             # that you conclude from lab Three
-            Q=...
-            R=...
-            P=...
+            Q= np.diag(np.full(6, 0.2))  
+            R= np.diag(np.full(4, 0.5))
+            P=Q
                         
             self.kf=kalman_filter(P,Q,R, x)
             
@@ -101,6 +101,15 @@ class localization(Node):
                             xhat[1],
                             normalize_angle(xhat[2]),
                             odom_msg.header.stamp])
+        
+        # Code straight from lab 3
+        v = odom_msg.twist.twist.linear.x
+        w = odom_msg.twist.twist.angular.z
+        ax = imu_msg.linear_acceleration.x
+        ay = imu_msg.linear_acceleration.y
+        stamp = odom_msg.header.stamp
+        x, y, th, w, v, vdot = xhat
+        self.loc_logger.log_values([ax, ay, vdot, v*w, v, w, x, y, Time.from_msg(stamp).nanoseconds])
         
     def odom_callback(self, pose_msg):
         
