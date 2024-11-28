@@ -43,10 +43,10 @@ class decision_maker(Node):
         publishing_period=1/rate
 
         # TODO PART 5 choose your threshold
-        self.reachThreshold=...
+        self.reachThreshold=0.5
 
         # TODO PART 5 your localization type
-        self.localizer=localization(...)
+        self.localizer=localization(type='rawSensors')
 
 
         
