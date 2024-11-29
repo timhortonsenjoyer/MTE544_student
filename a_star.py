@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from math import sqrt, dist, abs
+from math import sqrt, dist
 
 
 class Node:
