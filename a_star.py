@@ -65,7 +65,7 @@ def search(maze, start, end):
         :param end:
         :return:
     """
-    use_manhattan = True # uses Manhattan distance if true otherwise use Euclidean
+    use_manhattan = False # uses Manhattan distance if true otherwise use Euclidean
 
     # TODO PART 4 Create start and end node with initized values for g, h and f
     # Use None as parent if not defined
